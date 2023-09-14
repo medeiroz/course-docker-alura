@@ -1,7 +1,9 @@
 FROM node:20.6.1-bullseye
 
 WORKDIR /app-node
-EXPOSE 3000
+ARG PORT=3000
+ENV PORT=$PORT
+EXPOSE $PORT
 
 COPY . .
 RUN npm install
